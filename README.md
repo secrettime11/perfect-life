@@ -1,20 +1,56 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+  <h1 align="center">Perfect Life (台股市場動態與新聞分析)</h1>
+  <p align="center">
+    快速掌握個股最新動態與市場新聞，結合 AI 提供精準的投資輔助資訊
+  </p>
 </div>
 
-# Run and deploy your AI Studio app
+## 📖 專案介紹
 
-This contains everything you need to run your app locally.
+**Perfect Life** 是一款為投資人打造的台股資訊平台。透過整合 Google Gemini AI 技術，應用程式能自動蒐集並整理台股個股的新聞、財報與技術面資訊，並提供熱門產業族群的評分與精選個股推薦。
 
-View your app in AI Studio: https://ai.studio/apps/380a3466-6f78-41ac-8df9-c6bdb708453b
+## ✨ 核心功能
 
-## Run Locally
+*   **🔍 個股深度搜尋**：支援透過股票代號或名稱，快速搜尋近期的相關資訊與新聞。
+*   **📰 AI 新聞摘要**：自動整理與該股票相關的重點新聞，專注於對股價有影響的營運、重大事件及法人動向等資訊。
+*   **📊 技術與財報分析**：
+    *   **技術面**：提供最新的Ｋ線圖、成交量圖及技術指標（如 MA5, MA10, MA20），並附帶技術面摘要。
+    *   **基本面**：總結最新一季財報亮點、EPS、營收與未來展望。
+*   **🎯 綜合趨勢觀點**：由 AI 綜合評估基本面與技術面，提供未來趨勢走向分析與潛在的支撐 / 壓力區間參考。
+*   **💡 AI 嚴選推薦與族群評分**：
+    *   **AI 嚴選**：根據最新市場表現挑選強勢題材與相關個股。
+    *   **族群評分**：自動分析市場上主流的產業族群（如半導體、AI 伺服器等），給予推薦評分，並為每個族群挑選潛力個股。
 
-**Prerequisites:**  Node.js
+## 🚀 如何啟動專案
 
+### 前置作業
+請確保您的電腦已安裝 [Node.js](https://nodejs.org/)。
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 安裝與執行步驟
+
+1. **安裝依賴套件**
+   在專案根目錄的終端機執行以下指令：
+   ```bash
+   npm install
+   ```
+
+2. **設定環境變數**
+   * 將專案中的 `.env.example` 複製一份並重新命名為 `.env.local`。
+   * 打開 `.env.local`，並填入您申請的 Google Gemini API Key：
+     ```env
+     GEMINI_API_KEY="您的_GEMINI_API_KEY_填在這裡"
+     ```
+   * *注意：本專案使用 Gemini API 作為核心分析引擎。*
+
+3. **啟動開發伺服器**
+   ```bash
+   npm run dev
+   ```
+   啟動後，請在瀏覽器中開啟終端機所顯示的本機網址（通常為 `http://localhost:5173` 或 `http://localhost:3000`）即可開始體驗。
+
+## 🛠️ 技術架構
+
+*   **前端框架**: React 19 + Vite
+*   **樣式與 UI 元件**: TailwindCSS, Framer Motion, Lucide React
+*   **資料視覺化**: Recharts (圖表與 K 線圖繪製)
+*   **AI 整合**: `@google/genai` (連接 Gemini 進行資料摘要與推薦)
