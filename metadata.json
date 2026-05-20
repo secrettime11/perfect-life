@@ -1,0 +1,5 @@
+{
+  "name": "Perfect life",
+  "description": "蒐集並整理台股個股一個月內的新聞，支援代號與名稱搜尋及時間分類。",
+  "requestFramePermissions": []
+}
